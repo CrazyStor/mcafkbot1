@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... (your existing code) -->
+</head>
+  <body>
+      <p id="output">This is a paragraph</p>
+      <input id="textInput" type="text" placeholder="Enter text">
+      <button onclick="callServerFunction()">Call Function</button>
+
+      <script>
+          function callServerFunction() {
+              const textInput = document.getElementById("textInput").value; // Get the input text
+              const url = "/callFunction?text=" + encodeURIComponent(textInput); // Include the text in the URL
+              fetch(url)
+                  .then(response => response.text())
+                  .then(data => {
+                      // Handle the response if needed
+                      console.log(data);
+                  })
+                  .catch(error => {
+                      console.error("Error calling the server function", error);
+                  });
+          }
+      </script>
+  </body>
+</html>
