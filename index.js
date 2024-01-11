@@ -188,3 +188,5 @@ try {
 }
 createBot()
 createBot2()
+
+client.login(process.env.TOKEN);
