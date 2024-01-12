@@ -1,4 +1,3 @@
-const express = require("express");
 const http = require("http");
 const mineflayer = require('mineflayer')
 const mc = require('minecraft-protocol');
@@ -6,28 +5,6 @@ const AutoAuth = require('mineflayer-auto-auth');
 
 let bot;
 let bot2;
-
-const app = express();
-app.use(express.json());
-
-app.get("/callFunction", (req, res) => {
-  const inputText = req.query.text; // Get the text from the query parameter
-  if(inputText == "look"){
-    lookAtPlayerByName("CrazyStor")
-    lookAtPlayerByName2("CrazyStor")
-  }else if(inputText == "trade"){
-    trade1()
-    trade2()
-  }else{
-    test(inputText)
-  }
-  res.send("Function called with input: " + inputText); // Send a response
-});
-app.get("/", (_, res) => res.sendFile(__dirname + "/index.html"));
-app.listen(process.env.PORT);
-setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.repl.co/`);
-}, 224000);
 
 function test(string) {
   console.log("lol musaobs" + string)
