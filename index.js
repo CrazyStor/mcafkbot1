@@ -9,9 +9,9 @@ try {
   bot = mineflayer.createBot({
     host: 'play.friendlycraft.net', 
     version: false, // U can replace with 1.16.5 for example, remember to use ', = '1.16.5'
-    username: 'process.env.name',
+    username: process.env.name,
     plugins: [AutoAuth],
-    AutoAuth: 'process.env.pass'
+    AutoAuth: process.env.pass
   })
   bot.on('messagestr', (sender, message) => {
     console.log(`1.${sender} said "${message}"`)
