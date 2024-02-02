@@ -7,11 +7,11 @@ let bot;
 function createBot() {
 try {
   bot = mineflayer.createBot({
-    host: 'blissmc.org', 
+    host: 'play.friendlycraft.net', 
     version: false, // U can replace with 1.16.5 for example, remember to use ', = '1.16.5'
-    username: 'Manucha',
+    username: 'process.env.name',
     plugins: [AutoAuth],
-    AutoAuth: '123123123'
+    AutoAuth: 'process.env.pass'
   })
   bot.on('messagestr', (sender, message) => {
     console.log(`1.${sender} said "${message}"`)
